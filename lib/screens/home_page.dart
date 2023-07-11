@@ -40,63 +40,61 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 50.0),
           _nameAndBased(),
           const SizedBox(height: 100.0),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ...List.generate(
-                        leftIntro.length,
-                        (index) => _introductions(
-                            title: leftIntro[index].title,
-                            details: leftIntro[index].details,
-                            isRight: false),
-                      ),
-                    ],
-                  ),
-                ),
-                const Spacer(),
-                AnimatedContainer(
-                  duration: const Duration(seconds: 3),
-                  curve: Curves.bounceIn,
-                  child: Container(
-                    height: 500,
-                    width: 400,
-                    padding: const EdgeInsets.all(50.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(80.0),
-                      border: Border.all(color: Colors.grey, strokeAlign: 10.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ...List.generate(
+                      leftIntro.length,
+                      (index) => _introductions(
+                          title: leftIntro[index].title,
+                          details: leftIntro[index].details,
+                          isRight: false),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(80.0),
-                      child: Image.asset(
-                        'assets/images/binesh.png',
-                        fit: BoxFit.cover,
-                      ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              AnimatedContainer(
+                duration: const Duration(seconds: 3),
+                curve: Curves.bounceIn,
+                child: Container(
+                  height: 500,
+                  width: 400,
+                  padding: const EdgeInsets.all(50.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(80.0),
+                    border: Border.all(color: Colors.grey, strokeAlign: 10.0),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(80.0),
+                    child: Image.asset(
+                      'assets/images/binesh.png',
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                const Spacer(),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ...List.generate(
-                        rightIntro.length,
-                        (index) => _introductions(
-                            title: rightIntro[index].title,
-                            details: rightIntro[index].details,
-                            isRight: true),
-                      ),
-                    ],
-                  ),
+              ),
+              const Spacer(),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ...List.generate(
+                      rightIntro.length,
+                      (index) => _introductions(
+                          title: rightIntro[index].title,
+                          details: rightIntro[index].details,
+                          isRight: true),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           )
         ],
       ),
